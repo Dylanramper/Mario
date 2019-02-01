@@ -340,4 +340,4 @@ $(document).ready(function() {
 			context.drawImage(image, sprite.sourceX, sprite.sourceY, sprite.sourceWidth, sprite.sourceHeight, Math.floor(sprite.x), Math.floor(sprite.y), sprite.width, sprite.height);
 		}
 	}
-});
+})
