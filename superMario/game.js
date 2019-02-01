@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
 	var spriteObject = {
 		sourceX: 0,
@@ -46,7 +46,7 @@ $(document).ready(function() {
 	//The main program
 	var canvas = $("canvas");
 	var context = canvas.get(0).getContext("2d");
-	
+
 	$(image).load(function () {
 		var image = new Image();
 		image.src = ("1-1.png");
@@ -216,7 +216,7 @@ $(document).ready(function() {
 			//Tell the game that the cat is on the ground if it's standing on top of a platform
 			mario.isOnGround = true;
 
-			mario.vy =- mario.gravity;
+			mario.vy = - mario.gravity;
 		} else if (collisionSide === "top" && mario.vy >= 0) {
 			cat.vy = 0;
 		} else if (collisionSide === "left" && mario.vx <= 0) {
@@ -340,4 +340,4 @@ $(document).ready(function() {
 			context.drawImage(image, sprite.sourceX, sprite.sourceY, sprite.sourceWidth, sprite.sourceHeight, Math.floor(sprite.x), Math.floor(sprite.y), sprite.width, sprite.height);
 		}
 	}
-})
+});
