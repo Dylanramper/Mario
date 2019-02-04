@@ -14,6 +14,9 @@ $(document).ready(function () {
 	var background = new Background(context, canvas.width(), canvas.height());
 	background.image.src = background.imageSource;
 
+	var backgroundCollisions = [];
+	backgroundCollisions.push(new collisionBox(background.x, 520, 2210, 80, context));
+
 	window.addEventListener("keydown", keydownHandler, false);
 	window.addEventListener("keyup", keyupHandler, false);
 
@@ -50,6 +53,9 @@ $(document).ready(function () {
 		//mario.Update();
 		background.Update();
 
+		for (var i = 0; i < backgroundCollisions.length; i++) {
+			//backgroundCollisions[i].Update(background.x, background.y);
+		}
 		//Check wether the cat moved to the edges of the inner boundaries.
 		//if (mario.x < rightInnerBoundary) {
 			//mario.x = rightInnerBoundary;
@@ -61,13 +67,15 @@ $(document).ready(function () {
 	}
 
 	function CollisionBox() {
-		context.fillRect(0, 520, 750, 80);
+		context.fillRect(background.x, 520, 2210, 80);
 	}
 
 	function Render() {
 		context.clearRect(0,0,canvas.width, canvas.height);
 		background.Render();
-		CollisionBox();
+		for (var i = 0; i < backgroundCollisions.length; i++) {
+			backgroundCollisions[i].Render();
+		}
 	}
 
 	Update();
