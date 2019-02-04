@@ -30,9 +30,6 @@ $(document).ready(function () {
 
                 }
                 break;
-
-
-				
 		}
 	}
 
@@ -47,7 +44,7 @@ $(document).ready(function () {
 		}
     }
 
-	//var mario = new Mario();
+	var mario = new Player(0,0,context);
 	//mario.Image.src = mario.imageSource;
 
 	function Update() {
@@ -73,7 +70,8 @@ $(document).ready(function () {
 	function Render() {
 		context.clearRect(0,0,canvas.width, canvas.height);
 		background.Render();
-		CollisionBox();
+        CollisionBox();
+        mario.Render();
 	}
 
 	Update();
