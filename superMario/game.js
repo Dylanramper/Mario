@@ -18,6 +18,11 @@ $(document).ready(function () {
 	var backgroundCollisions = [];
 	backgroundCollisions.push(new collisionBox(background.x, 520, 2210, 80, context));
 
+	var block = new Block(context, 515, 370);
+	//var block = [];
+	//block.push(new Block(block.x, 
+	
+
 	window.addEventListener("keydown", keydownHandler, false);
 	window.addEventListener("keyup", keyupHandler, false);
 
@@ -43,6 +48,8 @@ $(document).ready(function () {
 		}
 
 	}
+	
+
 	
 
 	//var mario = new Mario();
@@ -77,6 +84,10 @@ $(document).ready(function () {
 		for (var i = 0; i < backgroundCollisions.length; i++) {
 			backgroundCollisions[i].Render();
 		}
+	
+		block.Render();
+		//for (var i = 0; i < blockCollisions.length; i++) {
+			//blockCollisions[i].Render();
 	}
 
 	Update();

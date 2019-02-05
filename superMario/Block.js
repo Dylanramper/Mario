@@ -1,20 +1,29 @@
-var Block = (function (canvas, canvasW, canvasH) {
-	this.sourceX = 272;
+var Block = (function (context,x,y) {
+	this.sourceX = 79;
 	this.sourceY = 112;
-	this.sourceWidth = 15;
-	this.sourceHeight = 15;
-	this.x = 0;
-	this.y = 0;
+	this.sourceWidth = 17;
+	this.sourceHeight = 17;
+	this.x = x;
+	this.y = y;
 
 
 
-	this.width = canvasW;
-	this.height = canvasH;
+	this.width = 32;
+	this.height = 32;
 
 	this.image = new Image();
-	this.imageSource = "blocks.png";
+	this.imageSource = "Images/blocks.png";
 	this.image.src = this.imageSource;
 
 	this.vx = 0;
 	this.vy = 0;
+
+	this.Update = function () {
+		this.x += this.vx;
+		this.y += this.vy;
+	}
+
+	this.Render = function () {
+		context.drawImage(this.image, this.sourceX, this.sourceY, this.sourceWidth, this.sourceHeight, this.x, this.y, this.width, this.height);
+	}
 });
