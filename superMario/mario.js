@@ -1,4 +1,4 @@
-var Player = (function (x, y, context) {
+ var Player = (function (x, y, context) {
     this.sourceX = 0;
     this.sourceY = 64;
     this.sourceWidth = 32;
