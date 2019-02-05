@@ -36,7 +36,6 @@
 
     this.Update = function () {
 
-
     }
 
     this.Render = function () {

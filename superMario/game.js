@@ -23,16 +23,16 @@ $(document).ready(function () {
 
 	function keydownHandler(event) {
 		switch (event.keyCode) {
-		
 
             case RIGHT:
-                background.vx = -5;
+                background.vx = 5;
                 //console.log(background.x);
-                if (background.x < -6050) {
-                    background.vx = 0;
-
+                if (background.x < -64) {
+                    background.vx = 
+                    break;
                 }
-                break;
+            
+                
 		}
 	}
 
