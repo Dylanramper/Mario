@@ -25,10 +25,9 @@ $(document).ready(function () {
 		switch (event.keyCode) {
 
             case RIGHT:
-                background.vx = 5;
-                //console.log(background.x);
-                if (background.x < -64) {
-                    background.vx = 
+                background.vx = -5;
+                mario.vx = 5
+                if (background.x < -64) { 
                     break;
                 }
             
