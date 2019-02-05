@@ -3,8 +3,8 @@
     this.sourceY = 64;
     this.sourceWidth = 32;
     this.sourceHeight = 32;
-    this.x = 200;
-    this.y = 488;
+    this.x = x;
+    this.y = y;
     this.width = 32;
     this.height = 32;
     this.vx = 0;

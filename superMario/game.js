@@ -1,9 +1,6 @@
 $(document).ready(function () {
-
-   
-    var canvas = $("canvas");
+	var canvas = $("canvas");
 	var context = canvas.get(0).getContext("2d");
-	
 
 	var JUMP = 40;
 	var RIGHT = 39;
@@ -13,7 +10,10 @@ $(document).ready(function () {
 
 	var rightInnerBoundary = (500 / 2) + (500 / 2);
 
-    var background = new Background(context, canvas.width(), canvas.height());
+    var mario = new Player(200, 488, context); 
+	
+
+	var background = new Background(context, canvas.width(), canvas.height());
 	background.image.src = background.imageSource;
 
 	var backgroundCollisions = [];
@@ -32,20 +32,23 @@ $(document).ready(function () {
 				mario.vx = 5;
 				if (background.x < -6050) {
 					background.vx = 0;
-                }
+
+				}
 				break;
 
 			case LEFT:
 				mario.vx = -5;
 				background.vx = 0;
 				break;
-                }
+
+		}
 	}
 
 
 	function keyupHandler(event) {
 		if (event.keyCode === LEFT || event.keyCode === RIGHT) {
 			background.vx = 0;
+			mario.vx = 0;
 		}
 
 	}
@@ -135,6 +138,7 @@ $(document).ready(function () {
 	}
 
 	function Render() {
+		mario.Render();
 		context.clearRect(0,0,canvas.width, canvas.height);
 		background.Render();
 		for (var i = 0; i < backgroundCollisions.length; i++) {
