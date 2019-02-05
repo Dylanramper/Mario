@@ -20,7 +20,7 @@ var Background = (function (canvas, canvasW, canvasH) {
 
 
 
-	//this.camera.x = (this.gameWorld.x + this.gameWorld.width / 2) - this.camera.width / 2;
+	this.camera.x = (this.gameWorld.x + this.gameWorld.width / 2) - this.camera.width / 2;
 	
 
 	this.Update = function () {
