@@ -25,6 +25,7 @@ $(document).ready(function () {
 
 			case RIGHT:
 				background.vx = -5;
+
 				//console.log(background.x);
 				if (background.x < -6050) {
 					background.vx = 0;
