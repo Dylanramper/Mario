@@ -1,11 +1,11 @@
-var Goombas = (function (x, y, context) {
-   
+var Turtles = (function (x, y, context) {
+
     this.sourceX = 0;
     this.sourceY = 0;
     this.sourceWidth = 17;
-    this.sourceHeight = 16;
+    this.sourceHeight = 24;
 
-    this.x = 300;
+    this.x = 600;
     this.y = 490;
     this.width = 30;
     this.height = 29;
@@ -23,15 +23,15 @@ var Goombas = (function (x, y, context) {
     this.isOnGround = true;
 
     this.image = new Image();
-    this.image.src = ("Images/goombas.png");
-    
+    this.image.src = ("Images/turtles.png");
+
 
     this.Update = function () {
-       
+
     }
     this.Render = function () {
         context.drawImage(this.image, this.sourceX, this.sourceY, this.sourceWidth, this.sourceHeight, this.x, this.y, this.width, this.height);
-    }   
+    }
 
 
 });

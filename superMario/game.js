@@ -1,9 +1,6 @@
 $(document).ready(function () {
 	var canvas = $("canvas");
 	var context = canvas.get(0).getContext("2d");
-
-    var goombas = new Goombas(0,0,context);
-    
    
 
 
@@ -20,6 +17,11 @@ $(document).ready(function () {
 
         var backgroundCollisions = [];
         backgroundCollisions.push(new collisionBox(background.x, 520, 2210, 80, context));
+
+        var goombas = new Goombas(0, 0, context);
+
+        var turtles = new Turtles(0, 0, context);
+
 
         window.addEventListener("keydown", keydownHandler, false);
         window.addEventListener("keyup", keyupHandler, false);
@@ -47,14 +49,15 @@ $(document).ready(function () {
 
         }
 
-
+   
         //var mario = new Mario();
         //mario.Image.src = mario.imageSource;
 
         function Update() {
             requestAnimationFrame(Update, canvas);
-
-            goombas.Update();
+            goombas.x--;
+            turtles.x--;
+   
             
 
             //mario.Update();
@@ -69,7 +72,7 @@ $(document).ready(function () {
             //background.vx -= mario.vx;
             //rightInnerBoundary = (400 / 2) + (400 / 2);
 
-            //}
+            //
             Render();
         }
 
@@ -83,8 +86,13 @@ $(document).ready(function () {
             for (var i = 0; i < backgroundCollisions.length; i++) {
                 backgroundCollisions[i].Render();
             }
-        }
 
+            goombas.Render();
+            turtles.Render();
+            
+    }
+
+   
         Update();
     
 });
