@@ -1,5 +1,5 @@
  var Player = (function (x, y, context) {
-    this.sourceX = 0;
+    this.sourceX = 32;
     this.sourceY = 64;
     this.sourceWidth = 32;
     this.sourceHeight = 32;

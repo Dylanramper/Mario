@@ -10,13 +10,16 @@ $(document).ready(function () {
 
 	var rightInnerBoundary = (500 / 2) + (500 / 2);
 
-    var mario = new Player(200, 488, context); 
+    
 	
 
 	var background = new Background(context, canvas.width(), canvas.height());
 	background.image.src = background.imageSource;
 
-	var backgroundCollisions = [];
+  
+
+
+    var backgroundCollisions = [];
 	backgroundCollisions.push(new collisionBox(background.x, 520, 2210, 80, context));
 
 	
