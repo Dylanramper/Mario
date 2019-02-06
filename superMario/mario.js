@@ -38,7 +38,6 @@
 		 console.log("mario");
 		 this.x += this.vx;
 		 this.y += this.vy;
-		 this.gravity =- this.vy;
     }
 
     this.Render = function () {
