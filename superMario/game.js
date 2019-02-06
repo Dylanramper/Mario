@@ -2,24 +2,23 @@ $(document).ready(function () {
 	var canvas = $("canvas");
 	var context = canvas.get(0).getContext("2d");
 
-	var JUMP = 40;
+	var JUMP = 32;
 	var RIGHT = 39;
 	var LEFT = 37;
+	var DOWN = 40;
 
 
 
 	var rightInnerBoundary = (500 / 2) + (500 / 2);
 
-    
-	
+	var mario = [];
+	mario.push(new Player(200, 488, context));
+
 
 	var background = new Background(context, canvas.width(), canvas.height());
 	background.image.src = background.imageSource;
 
-  
-
-
-    var backgroundCollisions = [];
+	var backgroundCollisions = [];
 	backgroundCollisions.push(new collisionBox(background.x, 520, 2210, 80, context));
 
 	
@@ -35,15 +34,22 @@ $(document).ready(function () {
 				mario.vx = 5;
 				if (background.x < -6050) {
 					background.vx = 0;
-
 				}
 				break;
 
 			case LEFT:
 				mario.vx = -5;
-				background.vx = 0;
-				break;
-
+				if (mario.vx < canvas.x) {
+					mario.vx = 0;
+				}
+					break;
+			
+			case JUMP:
+				mario.vy = -5;
+				if (background.vx = 0) {
+					mario.vy = 0;
+					break;
+				}
 		}
 	}
 
@@ -55,6 +61,7 @@ $(document).ready(function () {
 		}
 
 	}
+
 
 	function PlayGame() {
 
@@ -117,14 +124,14 @@ $(document).ready(function () {
 	//mario.Image.src = mario.imageSource;
 
 	function Update() {
-		console.log(backgroundCollisions[0]);
 		requestAnimationFrame(Update, canvas);
-
-		//mario.Update();
 		background.Update();
-
+		
 		for (var i = 0; i < backgroundCollisions.length; i++) {
 			backgroundCollisions[i].Update(background.x);
+		}
+		for (var i = 0; i < mario.length; i++) {
+			mario[i].Update(mario.x);
 		}
 		//Check wether the cat moved to the edges of the inner boundaries.
 		//if (mario.x < rightInnerBoundary) {
@@ -138,14 +145,19 @@ $(document).ready(function () {
 
 	function CollisionBox() {
 		context.fillRect(background.x, 520, 2210, 80);
+		context.fillRect(2280, 520, 200, 80);
 	}
 
 	function Render() {
-		mario.Render();
+		//mario.Render();
+		
 		context.clearRect(0,0,canvas.width, canvas.height);
 		background.Render();
 		for (var i = 0; i < backgroundCollisions.length; i++) {
 			backgroundCollisions[i].Render();
+		}
+		for (var i = 0; i < mario.length; i++) {
+			mario[i].Render();
 		}
 	}
 
