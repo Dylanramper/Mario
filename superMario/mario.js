@@ -10,11 +10,11 @@
     this.vx = 0;
     this.vy = 0;
     this.visible = true;
-    this.accelerationX = 0;
+    this.accelerationX = 0.2;
     this.accelerationY = 0;
-    this.speedLimit = 5;
+    this.speedLimit = 4;
     this.friction = 0.96;
-    this.gravity = 5;
+    this.gravity = 20;
     this.isOnGround = undefined;
     this.jumpForce = -10;
     this.image = new Image();
@@ -36,8 +36,9 @@
 
 	 this.Update = function () {
 		 console.log("mario");
-		this.x += this.vx;
+		 this.x += this.vx;
 		 this.y += this.vy;
+		 this.gravity =- this.vy;
     }
 
     this.Render = function () {

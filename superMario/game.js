@@ -42,14 +42,19 @@ $(document).ready(function () {
 				if (mario.vx < canvas.x) {
 					mario.vx = 0;
 				}
-					break;
+				break;
+
+			case DOWN:
+
+				break;
 			
 			case JUMP:
 				mario.vy = -5;
 				if (background.vx = 0) {
 					mario.vy = 0;
-					break;
 				}
+					break;
+				
 		}
 	}
 
