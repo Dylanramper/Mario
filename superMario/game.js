@@ -27,11 +27,33 @@ $(document).ready(function () {
     backgroundCollisions.push(new collisionBox(background.x, 520, 2210, 80, context));
 
     var goombas = [];
-    goombas.push(new Goombas(0, 0, context));
-    goombas.push(new Goombas(100, 0, context));
+    goombas.push(new Goombas(525, 494, context));
+    goombas.push(new Goombas(550, 494, context));
+    goombas.push(new Goombas(6250, 494, context));
+    goombas.push(new Goombas(650, 494, context));
+    goombas.push(new Goombas(700, 494, context));
+    goombas.push(new Goombas(1025, 494, context));
+    goombas.push(new Goombas(1050, 494, context));
+    goombas.push(new Goombas(1100, 494, context));
+    goombas.push(new Goombas(1150, 494, context));
+    goombas.push(new Goombas(1450, 494, context));
+    goombas.push(new Goombas(1500, 494, context));
+    goombas.push(new Goombas(1550, 494, context));
+    goombas.push(new Goombas(1625, 494, context));
 
 
-        var turtles = new Turtles(0, 0, context);
+    var koopas = [];
+    koopas.push(new Koopas(400, 483, context));
+    koopas.push(new Koopas(500, 483, context));
+    koopas.push(new Koopas(600, 483, context));
+    koopas.push(new Koopas(800, 483, context));
+    koopas.push(new Koopas(900, 483, context));
+    koopas.push(new Koopas(1000, 483, context));
+    koopas.push(new Koopas(1200, 483, context));
+    koopas.push(new Koopas(1300, 483, context));
+    koopas.push(new Koopas(1400, 483, context));
+    koopas.push(new Koopas(1600, 483, context));
+    koopas.push(new Koopas(1700, 483, context));
 
 
         window.addEventListener("keydown", keydownHandler, false);
@@ -143,7 +165,7 @@ $(document).ready(function () {
 		for (var i = 0; i < mario.length; i++) {
 			mario[i].Update();
 		}
-		//Check wether the cat moved to the edges of the inner boundaries.
+		//Check wether mario moved to the edges of the inner boundaries.
 		//if (mario.x < rightInnerBoundary) {
 			//mario.x = rightInnerBoundary;
 			//background.vx -= mario.vx;
@@ -151,6 +173,10 @@ $(document).ready(function () {
 
         for (var i = 0; i < goombas.length; i++) {
             goombas[i].Update();
+        }
+
+        for (var i = 0; i < koopas.length; i++) {
+            koopas[i].Update();
         }
 
         Render();
@@ -177,7 +203,11 @@ $(document).ready(function () {
         for (var i = 0; i < goombas.length; i++) {
             goombas[i].Render();
         }
-        turtles.Render();
+
+        for (var i = 0; i < koopas.length; i++) {
+            koopas[i].Render();
+        }
+        
 	}   
         Update();
     

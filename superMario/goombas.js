@@ -8,10 +8,10 @@ var Goombas = (function (x, y, context) {
     this.x = x;
     this.y = y;
 
-    this.width = 17;
-    this.height = 16;
+    this.width = 27;
+    this.height = 26;
 
-    this.vx = 0;
+    this.vx = -1;
     this.vy = 0;
 
     this.visible = true;
@@ -26,7 +26,6 @@ var Goombas = (function (x, y, context) {
     this.image = new Image();
     this.image.src = ("Images/goombas.png");
     
-
     this.Update = function () {
         this.x += this.vx;
         this.y += this.vy;
