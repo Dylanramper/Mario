@@ -10,7 +10,7 @@ $(document).ready(function () {
 
 	var rightInnerBoundary = (500 / 2) + (500 / 2);
 
-	var mario = new Mario();
+	var mario = new Player();
 	mario.image.src = mario.imageSource;
 
 	var background = new Background(context, canvas.width(), canvas.height());
@@ -18,6 +18,7 @@ $(document).ready(function () {
 
 	var backgroundCollisions = [];
 	backgroundCollisions.push(new collisionBox(background.x, 520, 2210, 80, context));
+	backgroundCollisions.push(new collisionBox(2280, 520, 2210, 80, context));
 
 	
 
@@ -108,13 +109,13 @@ $(document).ready(function () {
 		//Move mario
 		mario.x += mario.vx;
 		mario.y += mario.vy;
-	}
+	} 
 
 	//var mario = new Mario();
 	//mario.Image.src = mario.imageSource;
 
 	function Update() {
-		console.log(backgroundCollisions[0]);
+		//console.log(backgroundCollisions[0]);
 		requestAnimationFrame(Update, canvas);
 
 		//mario.Update();
@@ -135,10 +136,11 @@ $(document).ready(function () {
 
 	function CollisionBox() {
 		context.fillRect(background.x, 520, 2210, 80);
+		context.fillRect(background(2280), 520, 500, 80);
 	}
 
 	function Render() {
-		mario.Render();
+		//Player.Render();
 		context.clearRect(0,0,canvas.width, canvas.height);
 		background.Render();
 		for (var i = 0; i < backgroundCollisions.length; i++) {
