@@ -1,5 +1,5 @@
  var Player = (function (x, y, context) {
-    this.sourceX = 32;
+    this.sourceX = 0;
     this.sourceY = 64;
     this.sourceWidth = 32;
     this.sourceHeight = 32;
@@ -36,7 +36,25 @@
 
     this.Update = function () {
 
-    }
+     }
+
+     this.BigMario = function () {
+         this.sourceX = 0;
+         this.sourceY = 0;
+         this.sourceWidth = 32;
+         this.sourceHeight = 64;
+         this.height = 64;
+     }
+
+     this.FireMario = function () {
+         this.sourceX = 0;
+         this.sourceY = 0;
+         this.sourceWidth = 32;
+         this.sourceHeight = 64;
+         this.height = 64;
+         this.image.src = ("Images/FireMario.png")
+        
+     }
 
     this.Render = function () {
         context.drawImage(this.image, this.sourceX, this.sourceY, this.sourceWidth, this.sourceHeight, this.x, this.y, this.width, this.height);
