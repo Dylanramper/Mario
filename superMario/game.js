@@ -23,7 +23,11 @@ $(document).ready(function () {
 	backgroundCollisions.push(new collisionBox(2275, 520, 475, 80, context));
 	backgroundCollisions.push(new collisionBox(2850, 520, 2045, 80, context));
 	backgroundCollisions.push(new collisionBox(4960, 520, 2045, 80, context));
-
+	backgroundCollisions.push(new collisionBox(900, 440, 55, 100, context));
+	backgroundCollisions.push(new collisionBox(1220, 402, 55, 118, context));
+	backgroundCollisions.push(new collisionBox(1476, 360, 55, 160, context));
+	backgroundCollisions.push(new collisionBox(1830, 360, 55, 160, context));
+	backgroundCollisions.push(new collisionBox(1830, 0, 55, 160, context));
 
 	var block = [];
 	block.push(new Block(context, 515, 370,79,112));
@@ -218,7 +222,7 @@ $(document).ready(function () {
 
 		background.Render();
 		for (var i = 0; i < backgroundCollisions.length; i++) {
-			//backgroundCollisions[i].Render();
+			backgroundCollisions[i].Render();
 		}
 	
 		for (var i = 0; i < block.length; i++) {
