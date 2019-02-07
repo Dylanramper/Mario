@@ -5,8 +5,8 @@ var Goombas = (function (x, y, context) {
     this.sourceWidth = 17;
     this.sourceHeight = 16;
 
-    this.x = 300;
-    this.y = 490;
+    this.x = x;
+    this.y = y;
     this.width = 30;
     this.height = 29;
 
@@ -27,7 +27,8 @@ var Goombas = (function (x, y, context) {
     
 
     this.Update = function () {
-       
+        this.x += this.vx;
+        this.y += this.vy;
     }
     this.Render = function () {
         context.drawImage(this.image, this.sourceX, this.sourceY, this.sourceWidth, this.sourceHeight, this.x, this.y, this.width, this.height);
@@ -35,15 +36,3 @@ var Goombas = (function (x, y, context) {
 
 
 });
-
-var goombas = new Goombas(0, 0, context);
-
-var turtles = new Turtles(0, 0, context);
-
-function Update() {
-    requestAnimationFrame(Update, canvas);
-    goombas.x--;
-    turtles.x--;
-
-    goombas.Render();
-    turtles.Render();

@@ -18,7 +18,9 @@ $(document).ready(function () {
         var backgroundCollisions = [];
         backgroundCollisions.push(new collisionBox(background.x, 520, 2210, 80, context));
 
-        var goombas = new Goombas(0, 0, context);
+    var goombas = [];
+    goombas.push(new Goombas(0, 0, context));
+    goombas.push(new Goombas(100, 0, context));
 
         var turtles = new Turtles(0, 0, context);
 
@@ -54,7 +56,7 @@ $(document).ready(function () {
 
         function Update() {
             requestAnimationFrame(Update, canvas);
-            goombas.x--;
+            //goombas.x--;
             turtles.x--;
    
             
@@ -72,6 +74,11 @@ $(document).ready(function () {
             //rightInnerBoundary = (400 / 2) + (400 / 2);
 
             //
+
+            for (var i = 0; i < goombas.length; i++) {
+                goombas[i].Update();
+            }
+
             Render();
         }
 
@@ -86,7 +93,9 @@ $(document).ready(function () {
                 backgroundCollisions[i].Render();
             }
 
-            goombas.Render();
+            for (var i = 0; i < goombas.length; i++) {
+                goombas[i].Render();
+            }
             turtles.Render();
             
     }
