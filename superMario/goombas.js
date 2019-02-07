@@ -7,8 +7,9 @@ var Goombas = (function (x, y, context) {
 
     this.x = x;
     this.y = y;
-    this.width = 30;
-    this.height = 29;
+
+    this.width = 17;
+    this.height = 16;
 
     this.vx = 0;
     this.vy = 0;
@@ -32,7 +33,5 @@ var Goombas = (function (x, y, context) {
     }
     this.Render = function () {
         context.drawImage(this.image, this.sourceX, this.sourceY, this.sourceWidth, this.sourceHeight, this.x, this.y, this.width, this.height);
-    }   
-
-
+    } 
 });
