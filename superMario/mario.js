@@ -1,4 +1,4 @@
- var Player = (function (x, y, context) {
+var Player = (function (x, y, context) {
     this.sourceX = 0;
     this.sourceY = 64;
     this.sourceWidth = 32;
@@ -20,7 +20,6 @@
     this.image = new Image();
     this.image.src = ("Images/mario.png");
 
-
     this.CenterX = function () {
         return this.x + (this.width / 2);
     }
@@ -35,8 +34,9 @@
     }
 
     this.Update = function () {
-
-     }
+        this.x += this.vx;
+        this.y += this.vy;
+    }
 
      this.BigMario = function () {
          this.sourceX = 0;
@@ -58,8 +58,6 @@
 
     this.Render = function () {
         context.drawImage(this.image, this.sourceX, this.sourceY, this.sourceWidth, this.sourceHeight, this.x, this.y, this.width, this.height);
-    }
+    } 
 });
-
-
 
