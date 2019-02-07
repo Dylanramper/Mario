@@ -8,7 +8,9 @@ $(document).ready(function () {
 	var LEFT = 37;
 	var DOWN = 40;
 
-    var rightInnerBoundary = (500 / 2) + (500 / 2);
+	var rightInnerBoundary = (500 / 2) + (500 / 2);
+	var text = [];
+	text.push(new hud(context, "MARIO", 60, 50));
 
 	var mario = [];
 	mario.push(new Player(200, 488, context));
@@ -210,7 +212,7 @@ $(document).ready(function () {
         CollisionBox();
 		background.Render();
 		for (var i = 0; i < backgroundCollisions.length; i++) {
-			backgroundCollisions[i].Render();
+			//backgroundCollisions[i].Render();
 		}
 	
 		for (var i = 0; i < block.length; i++) {
@@ -221,7 +223,11 @@ $(document).ready(function () {
 			mario[i].Render();
 
 		}
+
+		for (var i = 0; i < text.length; i++) {
+			text[i].Render();
+		}
 	}
 
-	Update();
+	Update();            
 });
