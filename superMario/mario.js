@@ -10,11 +10,11 @@ var Player = (function (x, y, context) {
     this.vx = 0;
     this.vy = 0;
     this.visible = true;
-    this.accelerationX = 0;
+    this.accelerationX = 0.2;
     this.accelerationY = 0;
-    this.speedLimit = 5;
+    this.speedLimit = 4;
     this.friction = 0.96;
-    this.gravity = 0.4;
+    this.gravity = 20;
     this.isOnGround = undefined;
     this.jumpForce = -10;
     this.image = new Image();
@@ -60,4 +60,3 @@ var Player = (function (x, y, context) {
         context.drawImage(this.image, this.sourceX, this.sourceY, this.sourceWidth, this.sourceHeight, this.x, this.y, this.width, this.height);
     } 
 });
-
