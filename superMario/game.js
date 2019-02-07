@@ -11,14 +11,8 @@ $(document).ready(function () {
 
 	var rightInnerBoundary = (500 / 2) + (500 / 2);
 
-<<<<<<< HEAD
-	var mario = new Player();
-	mario.image.src = mario.imageSource;
-=======
 	var mario = [];
 	mario.push(new Player(200, 488, context));
-
->>>>>>> 7ab649c776d2cb03f9776c8dea13d41ba91ceb0f
 
 	var background = new Background(context, canvas.width(), canvas.height());
 	background.image.src = background.imageSource;
@@ -135,10 +129,6 @@ $(document).ready(function () {
 	//mario.Image.src = mario.imageSource;
 
 	function Update() {
-<<<<<<< HEAD
-		//console.log(backgroundCollisions[0]);
-=======
->>>>>>> 7ab649c776d2cb03f9776c8dea13d41ba91ceb0f
 		requestAnimationFrame(Update, canvas);
 		background.Update();
 		
@@ -160,20 +150,11 @@ $(document).ready(function () {
 
 	function CollisionBox() {
 		context.fillRect(background.x, 520, 2210, 80);
-<<<<<<< HEAD
-		context.fillRect(background(2280), 520, 500, 80);
-	}
-
-	function Render() {
-		//Player.Render();
-=======
-		context.fillRect(2280, 520, 200, 80);
+		//context.fillRect(background(2280), 520, 500, 80);
 	}
 
 	function Render() {
 		//mario.Render();
-		
->>>>>>> 7ab649c776d2cb03f9776c8dea13d41ba91ceb0f
 		context.clearRect(0,0,canvas.width, canvas.height);
 		background.Render();
 		for (var i = 0; i < backgroundCollisions.length; i++) {
