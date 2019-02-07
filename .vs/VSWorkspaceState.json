@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\superMario",
-    "\\superMario\\Images"
+    "\\superMario"
   ],
-  "SelectedNode": "\\superMario\\game.js",
+  "SelectedNode": "\\superMario\\mario.js",
   "PreviewInSolutionExplorer": false
 }
