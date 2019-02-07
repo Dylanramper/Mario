@@ -35,7 +35,7 @@
     }
 
 	 this.Update = function () {
-		 console.log("mario");
+		//console.log("mario");
 		 this.x += this.vx;
 		 this.y += this.vy;
     }

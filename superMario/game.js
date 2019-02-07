@@ -19,8 +19,10 @@ $(document).ready(function () {
 	background.image.src = background.imageSource;
 
 	var backgroundCollisions = [];
-	backgroundCollisions.push(new collisionBox(background.x, 520, 2210, 80, context));
-	backgroundCollisions.push(new collisionBox(2280, 520, 2210, 80, context));
+	backgroundCollisions.push(new collisionBox(0, 520, 2210, 80, context));
+	backgroundCollisions.push(new collisionBox(2275, 520, 475, 80, context));
+	backgroundCollisions.push(new collisionBox(2850, 520, 2045, 80, context));
+	backgroundCollisions.push(new collisionBox(4960, 520, 2045, 80, context));
 
 	window.addEventListener("keydown", keydownHandler, false);
 	window.addEventListener("keyup", keyupHandler, false);
@@ -134,34 +136,29 @@ $(document).ready(function () {
 		background.Update();
 		
 		for (var i = 0; i < backgroundCollisions.length; i++) {
-			backgroundCollisions[i].Update(background.x);
+			backgroundCollisions[i].Update(background.vx);
 		}
 		for (var i = 0; i < mario.length; i++) {
 			mario[i].Update();
 		}
-		//Check wether the cat moved to the edges of the inner boundaries.
-		//if (mario.x < rightInnerBoundary) {
-			//mario.x = rightInnerBoundary;
-			//background.vx -= mario.vx;
-			//rightInnerBoundary = (400 / 2) + (400 / 2);
-
-		//}
+		
 		Render();
 	}
 
+	//collision boxes for the floor
+
 	function CollisionBox() {
-		context.fillRect(background.x, 520, 2210, 80);
+		//context.fillRect(background.x, 520, 2210, 80);
 		//context.fillRect(background(2280), 520, 500, 80);
 	}
 
 	function Render() {
-		//mario.Render();
         context.clearRect(0, 0, canvas.width, canvas.height);
-        CollisionBox();
+        //CollisionBox();
 
 		background.Render();
 		for (var i = 0; i < backgroundCollisions.length; i++) {
-			backgroundCollisions[i].Render();
+			//backgroundCollisions[i].Render();
 		}
 		for (var i = 0; i < mario.length; i++) {
 			mario[i].Render();

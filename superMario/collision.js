@@ -4,9 +4,8 @@ var collisionBox = (function (x, y, width, height, context) {
 	this.width = width;
 	this.height = height;
 
-	this.Update = function (x) {
-		this.x = x;
-		
+	this.Update = function (vx) {
+		this.x += vx;
 	}
 
 	this.Render = function () {
