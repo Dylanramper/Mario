@@ -35,3 +35,15 @@ var Goombas = (function (x, y, context) {
 
 
 });
+
+var goombas = new Goombas(0, 0, context);
+
+var turtles = new Turtles(0, 0, context);
+
+function Update() {
+    requestAnimationFrame(Update, canvas);
+    goombas.x--;
+    turtles.x--;
+
+    goombas.Render();
+    turtles.Render();

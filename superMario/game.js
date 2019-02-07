@@ -50,8 +50,7 @@ $(document).ready(function () {
         }
 
    
-        //var mario = new Mario();
-        //mario.Image.src = mario.imageSource;
+       
 
         function Update() {
             requestAnimationFrame(Update, canvas);
