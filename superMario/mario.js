@@ -44,6 +44,7 @@ var Player = (function (x, y, context) {
          this.sourceWidth = 32;
          this.sourceHeight = 64;
          this.height = 64;
+         this.image.src = ("Images/mario.png");
      }
 
      this.FireMario = function () {

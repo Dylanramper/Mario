@@ -6,6 +6,9 @@ $(document).ready(function () {
 	var RIGHT = 39;
 	var LEFT = 37;
 	var DOWN = 40;
+    var FireMario = 90;
+    var BigMario = 88;
+
 
     var rightInnerBoundary = (500 / 2) + (500 / 2);
 
@@ -34,22 +37,29 @@ $(document).ready(function () {
 				break;
 
 			case LEFT:
-				mario[0].vx = -5;
-				if (mario.vx < canvas.x) {
-					mario.vx = 0;
+                background.vx = 5;
+                mario[0].vx = -5;
+                if (background.x > 6050) {
+                    background.vx = 0;
 				}
 				break;
 
-			case DOWN:
-
-				break;
-			
-			case JUMP:
-				mario.vy = -5;
+            case JUMP:
+				mario[0].vy = -5;
 				if (background.vx = 0) {
-					mario.vy = 0;
+					mario[0].vy = 0;
 				}
-					break;
+                break;
+
+            case FireMario:
+                mario[0].FireMario();
+                mario[0].y -= 28;
+                break;
+
+            case BigMario:
+                mario[0].BigMario();
+                mario[0].y -= 4;
+                break;
 				
 		}
 	}
@@ -132,7 +142,7 @@ $(document).ready(function () {
 		for (var i = 0; i < backgroundCollisions.length; i++) {
 			backgroundCollisions[i].Update(background.x);
 		}
-		for (var i = 0; i < mario.length; i++) {
+		for (var i = 0; i < mario[i].length; i++) {
 			mario[i].Update();
 		}
 		//Check wether the cat moved to the edges of the inner boundaries.
