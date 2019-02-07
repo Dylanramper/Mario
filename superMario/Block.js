@@ -1,12 +1,10 @@
-var Block = (function (context,x,y) {
-	this.sourceX = 79;
-	this.sourceY = 112;
+var Block = (function (context,x,y,sourceX,sourceY) {
+	this.sourceX = sourceX;
+	this.sourceY = sourceY;
 	this.sourceWidth = 17;
-	this.sourceHeight = 17;
+	this.sourceHeight = 16;
 	this.x = x;
 	this.y = y;
-
-
 
 	this.width = 32;
 	this.height = 32;
@@ -25,5 +23,9 @@ var Block = (function (context,x,y) {
 
 	this.Render = function () {
 		context.drawImage(this.image, this.sourceX, this.sourceY, this.sourceWidth, this.sourceHeight, this.x, this.y, this.width, this.height);
+	}
+
+	this.Update = function () {
+		this.x += this.vx;
 	}
 });
