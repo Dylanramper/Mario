@@ -25,4 +25,3 @@ var Background = (function (canvas, canvasW, canvasH) {
 		canvas.drawImage(this.image, this.sourceX, this.sourceY, this.sourceWidth, this.sourceHeight, this.x, this.y, this.width, this.height);
 	}
 });
-

@@ -3,6 +3,10 @@
     "",
     "\\superMario"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\superMario\\game.js",
+=======
+  "SelectedNode": "\\superMario\\background.js",
+>>>>>>> master
   "PreviewInSolutionExplorer": false
 }
