@@ -10,6 +10,7 @@ $(document).ready(function () {
     var BigMario = 88;
 
 
+
     var rightInnerBoundary = (500 / 2) + (500 / 2);
 
 	var mario = [];
@@ -45,9 +46,10 @@ $(document).ready(function () {
 				break;
 
             case JUMP:
-				mario[0].vy = -5;
-				if (background.vx = 0) {
-					mario[0].vy = 0;
+                background.vx= 0;
+                mario[0].vy = -5;
+				if (background.vy = 0) {
+					mario[0].vy = -5;
 				}
                 break;
 
@@ -58,7 +60,7 @@ $(document).ready(function () {
 
             case BigMario:
                 mario[0].BigMario();
-                mario[0].y -= 4;
+                mario[0].y -= 30;
                 break;
 				
 		}
