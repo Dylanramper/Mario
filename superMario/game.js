@@ -54,11 +54,11 @@ $(document).ready(function () {
 		}
 	}
 
-
+    //mario[0].FireMario();
 	function keyupHandler(event) {
 		if (event.keyCode === LEFT || event.keyCode === RIGHT) {
 			background.vx = 0;
-			mario.vx = 0;
+			mario[0].vx = 0;
 		}
 
 	}
@@ -147,7 +147,7 @@ $(document).ready(function () {
 
 	function CollisionBox() {
 		context.fillRect(background.x, 520, 2210, 80);
-		context.fillRect(background(2280), 520, 500, 80);
+		//context.fillRect(background(2280), 520, 500, 80);
 	}
 
 	function Render() {
