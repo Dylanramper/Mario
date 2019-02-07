@@ -66,7 +66,7 @@ $(document).ready(function () {
 		}
 	}
 
-    //mario[0].FireMario();
+    
 	function keyupHandler(event) {
 		if (event.keyCode === LEFT || event.keyCode === RIGHT) {
 			background.vx = 0;
