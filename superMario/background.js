@@ -6,8 +6,6 @@ var Background = (function (canvas, canvasW, canvasH) {
 	this.x = 0;
 	this.y = 0;
 	
-
-
 	this.width = 3584 * 2;
 	this.height = canvasH;
 
@@ -18,11 +16,6 @@ var Background = (function (canvas, canvasW, canvasH) {
 	this.vx = 0;
 	this.vy = 0;
 
-
-
-	//this.camera.x = (this.gameWorld.x + this.gameWorld.width / 2) - this.camera.width / 2;
-	
-
 	this.Update = function () {
 		this.x += this.vx;
 		this.y += this.vy;
@@ -32,5 +25,3 @@ var Background = (function (canvas, canvasW, canvasH) {
 		canvas.drawImage(this.image, this.sourceX, this.sourceY, this.sourceWidth, this.sourceHeight, this.x, this.y, this.width, this.height);
 	}
 });
-
-
