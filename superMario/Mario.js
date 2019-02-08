@@ -1,4 +1,4 @@
-var Player = (function (x, y, context) {
+var mario = (function (x, y, context) {
     this.sourceX = 0;
     this.sourceY = 64;
     this.sourceWidth = 32;
@@ -78,14 +78,54 @@ var Player = (function (x, y, context) {
 
     }
 
-    function jump() {
-        requestAnimationFrame(jump)
-        if (vy > -jumpSpeed);
-        vy--;
-        vy *= friction;
-        canvasY += vy;
 
+    function PlayGame() {
+
+
+
+    if (jump && mario.isOnGround) {
+        mario.vy += mario.jumpForce;
+        mario.isOnGround = false;
+        mario.friction = 1;
     }
+
+    
+    if (!moveLeft && !moveRight) {
+        mario.accelerationX = 0;
+        mario.friction = 0.96;
+        mario.gravity = 0.3;
+    }
+
+    
+    mario.vx += mario.accelerationX;
+    mario.vy += mario.accelerationY;
+
+    
+    if (mario.isOnGround) {
+        mario.vx *= mario.friction;
+    }
+
+    
+     mario.vy += mario.gravity;
+
+    
+    if (mario.vx > mario.speedLimit) {
+        mario.vx = mario.speedLimit;
+    }
+
+    if (mario.vx < -mario.speedLimit) {
+        mario.vx = -mario.speedLimit;
+    }
+
+    if (mario.vy > mario.speedLimit * 2) {
+        mario.vy = mario.speedLimit * 2;
+    }
+
+    
+    mario.x += mario.vx;
+    mario.y += mario.vy;
+
+}
 
 
 
