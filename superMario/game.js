@@ -8,6 +8,8 @@ $(document).ready(function () {
 	var DOWN = 40;
     var FireMario = 90;
     var BigMario = 88;
+    var StarMarioLarge = 83;
+    var StarMarioMini = 65;
 
 
 
@@ -131,7 +133,7 @@ $(document).ready(function () {
 
             case JUMP:
                 background.vx= 0;
-                mario[0].vy = -5;
+                mario[0].vy = -15;
 				if (background.vy = 0) {
 					mario[0].vy = -5;
 				}
@@ -144,6 +146,16 @@ $(document).ready(function () {
 
             case BigMario:
                 mario[0].BigMario();
+                mario[0].y -= 30;
+                break;
+
+            case StarMarioMini:
+                mario[0].StarMarioMini();
+                mario[0].y -= 30;
+                break;
+
+            case StarMarioLarge:
+                mario[0].StarMarioLarge();
                 mario[0].y -= 30;
                 break;
 				
@@ -232,8 +244,8 @@ $(document).ready(function () {
 		for (var i = 0; i < backgroundCollisions.length; i++) {
 			backgroundCollisions[i].Update(background.x);
 		}
-		for (var i = 0; i < mario[i].length; i++) {
-			mario[i].Update();
+		for (var i = 0; i < mario[0].length; i++) {
+			mario[0].Update();
 		}
 		//Check wether mario moved to the edges of the inner boundaries.
 		//if (mario.x < rightInnerBoundary) {

@@ -14,9 +14,9 @@ var Player = (function (x, y, context) {
     this.accelerationY = 0;
     this.speedLimit = 4;
     this.friction = 0.96;
-    this.gravity = .3;
+    this.gravity = 10;
     this.isOnGround = undefined;
-    this.jumpForce = -10;
+    this.jumpForce = -15;
     this.image = new Image();
     this.image.src = ("Images/mario.png");
 
@@ -55,7 +55,28 @@ var Player = (function (x, y, context) {
          this.height = 64;
          this.image.src = ("Images/FireMario.png");
         
-     }
+    }
+
+    this.StarMarioMini = function () {
+        this.sourceX = 0;
+        this.sourceY = 64;
+        this.sourceWidth = 32;
+        this.sourceHeight = 32;
+        this.image.src = ("Images/StarMario.png");
+
+    }
+
+    this.StarMarioLarge = function () {
+        this.sourceX = 0;
+        this.sourceY = 0;
+        this.sourceWidth = 32;
+        this.sourceHeight = 64;
+        this.height = 64;
+        this.image.src = ("Images/StarMario.png");
+
+    }
+
+
 
     this.Render = function () {
         context.drawImage(this.image, this.sourceX, this.sourceY, this.sourceWidth, this.sourceHeight, this.x, this.y, this.width, this.height);
