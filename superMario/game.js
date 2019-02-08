@@ -9,22 +9,51 @@ $(document).ready(function () {
     var FireMario = 90;
     var BigMario = 88;
 
-
-
     var rightInnerBoundary = (500 / 2) + (500 / 2);
 
 	var mario = [];
 	mario.push(new Player(200, 488, context));
 
-    var rightInnerBoundary = (500 / 2) + (500 / 2);
-
-
-    var background = new Background(context, canvas.width(), canvas.height());
-    background.image.src = background.imageSource;
+	var background = new Background(context, canvas.width(), canvas.height());
+	background.image.src = background.imageSource;
 
 	var backgroundCollisions = [];
-	backgroundCollisions.push(new collisionBox(background.x, 520, 2210, 80, context));
-	backgroundCollisions.push(new collisionBox(2280, 520, 2210, 80, context));
+	backgroundCollisions.push(new collisionBox(0, 520, 2210, 80, context));
+	backgroundCollisions.push(new collisionBox(2275, 520, 475, 80, context));
+	backgroundCollisions.push(new collisionBox(2850, 520, 2045, 80, context));
+	backgroundCollisions.push(new collisionBox(4960, 520, 2045, 80, context));
+	backgroundCollisions.push(new collisionBox(900, 440, 55, 100, context));
+	backgroundCollisions.push(new collisionBox(1220, 402, 55, 118, context));
+	backgroundCollisions.push(new collisionBox(1476, 360, 55, 160, context));
+	backgroundCollisions.push(new collisionBox(1830, 360, 55, 160, context));
+	backgroundCollisions.push(new collisionBox(5220, 440, 55, 160, context));
+	backgroundCollisions.push(new collisionBox(5733, 440, 55, 160, context));
+	backgroundCollisions.push(new collisionBox(4285, 480, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4320, 440, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4355, 400, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4385, 360, 32, 200, context));
+	backgroundCollisions.push(new collisionBox(4479, 360, 32, 200, context));
+	backgroundCollisions.push(new collisionBox(4510, 398, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4544, 440, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4574, 478, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4737, 478, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4765, 440, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4800, 400, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4830, 360, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4863, 360, 32, 500, context));
+	backgroundCollisions.push(new collisionBox(4960, 360, 32, 500, context));
+	backgroundCollisions.push(new collisionBox(4990, 400, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5024, 435, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5053, 478, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5790, 480, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5822, 441, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5854, 401, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5885, 362, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5917, 321, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5950, 280, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5985, 240, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(6015, 200, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(6045, 200, 32, 500, context));
 
 	var block = [];
 	block.push(new Block(context, 515, 370,79,112));
@@ -74,9 +103,6 @@ $(document).ready(function () {
 	block.push(new Block(context, 5380, 370, 273, 112));
 
     var goombas = [];
-    goombas.push(new Goombas(525, 494, context));
-    goombas.push(new Goombas(550, 494, context));
-    goombas.push(new Goombas(6250, 494, context));
     goombas.push(new Goombas(650, 494, context));
     goombas.push(new Goombas(700, 494, context));
     goombas.push(new Goombas(1025, 494, context));
@@ -88,11 +114,15 @@ $(document).ready(function () {
     goombas.push(new Goombas(1550, 494, context));
     goombas.push(new Goombas(1625, 494, context));
 
+    var squishedGoombas = [];
+    squishedGoombas.push;
+
+    if (goombas.x < mario.x + mario.width && mario.x > goombas.x + goombas.width && goombas.y < mario.y + mario.height && mario.y > goombas.height + goombas.y) {
+        goombas = new(squishedGoombas);
+        squishedGoombas.image.src = squishedGoombas.imageSource;
+    }
 
     var koopas = [];
-    koopas.push(new Koopas(400, 483, context));
-    koopas.push(new Koopas(500, 483, context));
-    koopas.push(new Koopas(600, 483, context));
     koopas.push(new Koopas(800, 483, context));
     koopas.push(new Koopas(900, 483, context));
     koopas.push(new Koopas(1000, 483, context));
@@ -102,6 +132,13 @@ $(document).ready(function () {
     koopas.push(new Koopas(1600, 483, context));
     koopas.push(new Koopas(1700, 483, context));
 
+    var squishedKoopas = [];
+    squishedKoopas.push;
+
+    if (koopas.x < mario.x + mario.width && mario.x > koopas.x + koopas.width && koopas.y < mario.y + mario.height && mario.y > koopas.height + koopas.y) {
+        koopas = new(squishedKoopas);
+        squishedKoopas.image.src = squishedKoopas.imageSource;
+    }
 
 	window.addEventListener("keydown", keydownHandler, false);
 	window.addEventListener("keyup", keyupHandler, false);
@@ -112,17 +149,19 @@ $(document).ready(function () {
 			case RIGHT:
 				background.vx = -5;
 				mario[0].vx = 5;
+
 				if (background.x < -6050) {
 					background.vx = 0;
 				}
 				for (var i = 0; i < block.length; i++) {
-					block[i].vx = -5;
+					block[i].vx = -2.5;
 				}
 				break;
 
 			case LEFT:
-                background.vx = 5;
-                mario[0].vx = -5;
+                background.vx = 0;
+                mario[0].vx = 0;
+
                 if (background.x > 6050) {
                     background.vx = 0;
 				}
@@ -164,82 +203,21 @@ $(document).ready(function () {
 		mario.vx = 0;
 	}
 
-	function PlayGame() {
-
-		/*if (moveLeft && !moveRight) {
-			mario.accelerationX = -0.2;
-			mario.friction = 1;
-		}
-
-
-		if (moveRight && !moveLeft) {
-			mario.accelerationX = 0.2;
-			mario.friction = 1;
-		}
-
-		if (jump && mario.isOnGround) {
-			mario.vy += mario.jumpForce;
-			mario.isOnGround = false;
-			mario.friction = 1;
-		}
-
-
-		if (!moveLeft && !moveRight) {
-			mario.accelerationX = 0;
-			mario.friction = 0.96;
-			mario.gravity = 0.3;
-		}
-
-
-		mario.vx += mario.accelerationX;
-		mario.vy += mario.accelerationY;
-
-		//Apply the friction
-		if (mario.isOnGround) {
-			mario.vx *= mario.friction;
-		}
-
-		//Apply the gravity
-		mario.vy += mario.gravity;
-
-		//Limit the speed
-
-		if (mario.vx > mario.speedLimit) {
-			mario.vx = mario.speedLimit;
-		}
-
-		if (mario.vx < -mario.speedLimit) {
-			mario.vx = -mario.speedLimit;
-		}
-
-		if (mario.vy > mario.speedLimit * 2) {
-			mario.vy = mario.speedLimit * 2;
-		}
-
-		//Move mario
-		mario.x += mario.vx;
-		mario.y += mario.vy;*/
-	} 
-
-	//var mario = new Mario();
-	//mario.Image.src = mario.imageSource;
-
 	function Update() {
-		//console.log(backgroundCollisions[0]);
+
 		requestAnimationFrame(Update, canvas);
 		background.Update();
 
 		for (var i = 0; i < backgroundCollisions.length; i++) {
-			backgroundCollisions[i].Update(background.x);
+			backgroundCollisions[i].Update(background.vx);
 		}
 		for (var i = 0; i < mario[i].length; i++) {
 			mario[i].Update();
 		}
-		//Check wether mario moved to the edges of the inner boundaries.
-		//if (mario.x < rightInnerBoundary) {
-			//mario.x = rightInnerBoundary;
-			//background.vx -= mario.vx;
-			//rightInnerBoundary = (400 / 2) + (400 / 2);
+
+		for (var i = 0; i < block.length; i++) {
+			block[i].Update();
+		}
 
         for (var i = 0; i < block.length; i++) {
             block[i].Update();
@@ -249,24 +227,27 @@ $(document).ready(function () {
             goombas[i].Update();
         }
 
+        for (var i = 0; i < squishedGoombas.length; i++) {
+            squishedGoombas[i].Update();
+        }
+
         for (var i = 0; i < koopas.length; i++) {
             koopas[i].Update();
+        }
+
+        for (var i = 0; i < squishedKoopas.length; i++) {
+            squishedKoopas[i].Update();
         }
 
         Render();
     }
 
-	function CollisionBox() {
-		context.fillRect(background.x, 520, 2210, 80);
-		//context.fillRect(background(2280), 520, 500, 80);
-	}
 
 	function Render() {		
         context.clearRect(0, 0, canvas.width, canvas.height);
-        CollisionBox();
+       
 		background.Render();
 		for (var i = 0; i < backgroundCollisions.length; i++) {
-			backgroundCollisions[i].Render();
 		}
 	
 		for (var i = 0; i < block.length; i++) {
@@ -275,15 +256,22 @@ $(document).ready(function () {
 
 		for (var i = 0; i < mario.length; i++) {
 			mario[i].Render();
-
         }
 
         for (var i = 0; i < goombas.length; i++) {
             goombas[i].Render();
         }
 
+        for (var i = 0; i < squishedGoombas.length; i++) {
+            squishedGoombas[i].Render();
+        }
+
         for (var i = 0; i < koopas.length; i++) {
             koopas[i].Render();
+        }
+
+        for (var i = 0; i < squishedKoopas.length; i++) {
+            squishedKoopas[i].Render();
         }
         
 	}   
