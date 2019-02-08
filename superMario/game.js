@@ -146,13 +146,14 @@ $(document).ready(function () {
 					background.vx = 0;
 				}
 				for (var i = 0; i < block.length; i++) {
-					block[i].vx = -5;
+					block[i].vx = -2.5;
 				}
 				break;
 
 			case LEFT:
-                background.vx = 5;
-                mario[0].vx = -5;
+                background.vx = 0;
+                mario[0].vx = 0;
+
                 if (background.x > 6050) {
                     background.vx = 0;
 				}
