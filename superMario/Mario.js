@@ -33,9 +33,9 @@ var Player = (function (x, y, context) {
         return this.height / 2;
     }
 
-    this.Update = function () {
-        this.x += this.vx;
-        this.y += this.vy;
+	 this.Update = function () {
+		 this.x += this.vx;
+		 this.y += this.vy;
     }
 
      this.BigMario = function () {
