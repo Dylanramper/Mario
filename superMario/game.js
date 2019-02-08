@@ -26,8 +26,34 @@ $(document).ready(function () {
 	backgroundCollisions.push(new collisionBox(1220, 402, 55, 118, context));
 	backgroundCollisions.push(new collisionBox(1476, 360, 55, 160, context));
 	backgroundCollisions.push(new collisionBox(1830, 360, 55, 160, context));
-	backgroundCollisions.push(new collisionBox(1830, 0, 55, 160, context));
-
+	backgroundCollisions.push(new collisionBox(5220, 440, 55, 160, context));
+	backgroundCollisions.push(new collisionBox(5733, 440, 55, 160, context));
+	backgroundCollisions.push(new collisionBox(4285, 480, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4320, 440, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4355, 400, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4385, 360, 32, 200, context));
+	backgroundCollisions.push(new collisionBox(4479, 360, 32, 200, context));
+	backgroundCollisions.push(new collisionBox(4510, 398, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4544, 440, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4574, 478, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4737, 478, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4765, 440, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4800, 400, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4830, 360, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(4863, 360, 32, 500, context));
+	backgroundCollisions.push(new collisionBox(4960, 360, 32, 500, context));
+	backgroundCollisions.push(new collisionBox(4990, 400, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5024, 435, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5053, 478, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5790, 480, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5822, 441, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5854, 401, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5885, 362, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5917, 321, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5950, 280, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(5985, 240, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(6015, 200, 32, 38, context));
+	backgroundCollisions.push(new collisionBox(6045, 200, 32, 500, context));
 
 	var block = [];
 	block.push(new Block(context, 515, 370,79,112));
@@ -272,7 +298,7 @@ $(document).ready(function () {
 
 		background.Render();
 		for (var i = 0; i < backgroundCollisions.length; i++) {
-			backgroundCollisions[i].Render();
+			//backgroundCollisions[i].Render();
 		}
 	
 		for (var i = 0; i < block.length; i++) {
