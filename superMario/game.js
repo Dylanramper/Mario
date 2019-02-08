@@ -122,7 +122,7 @@ $(document).ready(function () {
 					background.vx = 0;
 				}
 				for (var i = 0; i < block.length; i++) {
-					block[i].vx = -5;
+					block[i].vx = -2.5;
 				}
 				break;
 
@@ -137,9 +137,9 @@ $(document).ready(function () {
 
             case JUMP:
                 background.vx= 0;
-                mario[0].vy = -15;
+                mario[0].jump = -15;
 				if (background.vy = 0) {
-					mario[0].vy = -5;
+					mario[0].vy = 0;
 				}
                 break;
 

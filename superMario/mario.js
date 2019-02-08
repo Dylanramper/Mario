@@ -15,7 +15,9 @@ var Player = (function (x, y, context) {
     this.speedLimit = 4;
     this.friction = 0.96;
     this.gravity = 10;
-    this.isOnGround = undefined;
+    this.isOnGround = true;
+    this.jumpStrength = 20;
+    this.y -= jumpStrength;
     this.jumpForce = -15;
     this.image = new Image();
     this.image.src = ("Images/mario.png");
@@ -62,6 +64,7 @@ var Player = (function (x, y, context) {
         this.sourceY = 64;
         this.sourceWidth = 32;
         this.sourceHeight = 32;
+        this.height = 32;
         this.image.src = ("Images/StarMario.png");
 
     }
